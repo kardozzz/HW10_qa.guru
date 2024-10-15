@@ -9,7 +9,6 @@ public class TestBase {
         com.codeborne.selenide.Configuration.pageLoadStrategy = "eager";
         com.codeborne.selenide.Configuration.baseUrl = "https://www.saucedemo.com";
         Configuration.browser = "chrome";
-        Configuration.holdBrowserOpen = true;
 
     }
 }
