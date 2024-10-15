@@ -13,9 +13,9 @@ public class WebSteps {
     }
     @Step("Ищем репозиторий {repo}")
     public void SearchForRepository(String repo){
-        $(".qb-input-query").click();
-        $(".qb-input-query").sendKeys(repo);
-        $(".qb-input-query").submit();
+        $(".search-input").click();
+        $("#query-builder-test").sendKeys(repo);
+        $("#query-builder-test").submit();
     }
     @Step("Кликаем по ссылке репозитория ")
     public void clickOpenRepositoryLink(String repo){

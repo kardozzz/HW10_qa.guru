@@ -29,6 +29,9 @@ dependencies {
     testImplementation 'com.codeborne:selenide:7.5.1'
     implementation 'io.qameta.allure:allure-selenide:2.29.0'
 }
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
 
 test {
     useJUnitPlatform()

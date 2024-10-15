@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.linkText;
 
-public class StepsTest {
+public class StepsTest extends TestBase {
 
     private final static String REPOSITORY = "kardozzz/HW10_qa.guru";
     private final static String ISSUE = "Test Issue";
@@ -17,9 +17,9 @@ public class StepsTest {
     void findIssueTests(){
         SelenideLogger.addListener("allure",new AllureSelenide());
         open("https://github.com/");
-        $(".qb-input-query").click();
-        $(".qb-input-query").sendKeys("kardozzz/HW10_qa.guru");
-        $(".qb-input-query").submit();
+        $(".search-input").click();
+        $("#query-builder-test").sendKeys("kardozzz/HW10_qa.guru");
+        $("#query-builder-test").submit();
 
         $(linkText("kardozzz/HW10_qa.guru")).click();
         $(".issues-tab").click();
@@ -34,9 +34,9 @@ public class StepsTest {
             open("https://github.com/");
         });
         step("Ищем репозиторий" + REPOSITORY, () -> {
-            $(".qb-input-query").click();
-            $(".qb-input-query").sendKeys(REPOSITORY);
-            $(".qb-input-query").submit();
+            $(".search-input").click();
+            $("#query-builder-test").sendKeys(REPOSITORY);
+            $("#query-builder-test").submit();
         });
         step("Кликаем по ссылке репозитория " + REPOSITORY, () -> {
             $(linkText(REPOSITORY)).click();
